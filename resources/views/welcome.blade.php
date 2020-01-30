@@ -119,6 +119,17 @@
             var val = table.column(this).name();
             alert('index : '+val);
         });*/
+
+        $(document).ready( function () {
+            var table = $('#example').DataTable();
+
+
+            $('#example').on( 'order.dt',  function () {
+                let order = table.order();
+                console.log("Ordered column " + order[0][0] + ", in direction " + order[0][1]);
+            } )
+        } );
+
     </script>
 
     </body>
